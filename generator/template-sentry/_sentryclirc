@@ -1,0 +1,7 @@
+[defaults]
+project=<%= project %>
+org=<%= org %>
+url=http://192.168.2.68:9000
+
+[auth]
+token=<%= token %>
