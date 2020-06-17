@@ -6,11 +6,11 @@ const { mapActions } = createNamespacedHelpers('app')
 const { saveUserData, removeUserData } = mapActions(['saveUserData', 'removeUserData'])
 
 @single
-export default class UserModel {
+class UserModel {
   userInfo = null
 
   @errorHandler()
-  async login(param) {
+  async login (param) {
     const result = await login(param)
     const { userInfo, token } = result
     this.userInfo = userInfo
@@ -18,10 +18,12 @@ export default class UserModel {
   }
 
   @errorHandler()
-  async logout(param) {
+  async logout (param) {
     await logout(param)
     this.userInfo = null
     removeUserData()
     return true
   }
 }
+
+export default UserModel

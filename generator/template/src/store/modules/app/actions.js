@@ -1,7 +1,7 @@
 import localStore from '../../../utils/local-store'
 import * as types from './mutation-types'
 
-export const saveUserData = async ({ commit }, {token, userInfo}) => {
+export const saveUserData = async ({ commit }, { token, userInfo }) => {
   try {
     commit(types.SET_TOKEN, token)
     commit(types.SET_USER_INFO, userInfo)
@@ -14,7 +14,7 @@ export const saveUserData = async ({ commit }, {token, userInfo}) => {
   }
 }
 
-export const removeUserData = async ({ commit } ) => {
+export const removeUserData = async ({ commit }) => {
   try {
     commit(types.SET_TOKEN, null)
     commit(types.SET_USER_INFO, null)

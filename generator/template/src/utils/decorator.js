@@ -1,19 +1,19 @@
 import { Message } from 'element-ui'
 
-export const single = (target) => {
-  target.instance = null
-  target.getInstance = function(...args) {
-    if (!target.instance) {
-      target.instance = new target(...args)
+export const single = (Target) => {
+  Target.instance = null
+  Target.getInstance = function (...args) {
+    if (!Target.instance) {
+      Target.instance = new Target(...args)
     }
-    return target.instance
+    return Target.instance
   }
 }
 
 export const errorHandler = (handler) => {
-  return function (target, name, descriptor) {
+  return function (Target, name, descriptor) {
     const raw = descriptor.value
-    descriptor.value = async function(...args) {
+    descriptor.value = async function (...args) {
       try {
         const result = await raw.call(this, ...args)
         return result

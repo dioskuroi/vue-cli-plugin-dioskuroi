@@ -3,7 +3,12 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import { initInterceptors } from './utils/request'
+import ElementUI from 'element-ui'
 import './assets/stylus/reset.styl'
+import 'element-ui/lib/theme-chalk/index.css'
+
+Vue.use(ElementUI)
+
 <%_ if (sentry) { _%>
 import * as Sentry from '@sentry/browser'
 import * as Integrations from '@sentry/integrations'

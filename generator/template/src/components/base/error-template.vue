@@ -13,14 +13,14 @@ export default {
   props: {
     type: String
   },
-  data() {
+  data () {
     return {
       errorImg: require('../../assets/images/error.png'),
       notFoundImg: require('../../assets/images/404.png')
     }
   },
   computed: {
-    imgSrc() {
+    imgSrc () {
       return this.type === 'error' ? this.errorImg : this.notFoundImg
     }
   }

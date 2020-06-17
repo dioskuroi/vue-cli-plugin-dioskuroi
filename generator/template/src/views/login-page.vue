@@ -1,29 +1,29 @@
 <template>
   <section class="login-container">
-    <el-form 
-      class="login-form" 
-      :model="loginForm" 
-      :rules="loginFormRules" 
+    <el-form
+      class="login-form"
+      :model="loginForm"
+      :rules="loginFormRules"
       label-position="left"
       label-width="0px"
       ref="loginForm">
       <h3 class="title">请输入您的信息</h3>
       <el-form-item prop="account">
-        <el-input 
-          type="text" 
-          v-model="loginForm.account" 
-          auto-complete="off" 
+        <el-input
+          type="text"
+          v-model="loginForm.account"
+          auto-complete="off"
           placeholder="请输入用户名" />
       </el-form-item>
       <el-form-item prop="password">
-        <el-input 
-          type="password" 
-          v-model="loginForm.password" 
-          auto-complete="off" 
+        <el-input
+          type="password"
+          v-model="loginForm.password"
+          auto-complete="off"
           placeholder="请输入密码" />
       </el-form-item>
       <el-form-item style="width:100%; text-align:center;">
-        <el-button type="primary" class="login-button" @click="submit" :loading="loading">登　录</el-button>
+        <el-button type="primary" class="login-button" @click="submit" :loading="loading">登&nbsp;&nbsp;录</el-button>
       </el-form-item>
     </el-form>
   </section>
@@ -34,20 +34,21 @@ import UserModel from '../model/user'
 const userModel = UserModel.getInstance()
 export default {
   name: 'LoginPage',
-  data() {
+  data () {
     return {
       loginForm: {
         account: '',
         password: ''
       },
       loginFormRules: {
-        account: [{ required: true, message: "请输入账号", trigger: "blur" }],
-        password: [{ required: true, message: "请输入密码", trigger: "blur" }]
-      }
+        account: [{ required: true, message: '请输入账号', trigger: 'blur' }],
+        password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
+      },
+      loading: false
     }
   },
   methods: {
-    async submit() {
+    async submit () {
       try {
         await this.$refs.loginForm.validate()
       } catch (error) {}
@@ -73,7 +74,7 @@ export default {
   .login-form {
     position absolute
     width 22vw
-    height 29vw
+    height 25vw
     border-radius 0.25vw
     box-sizing border-box
     z-index 101
@@ -85,7 +86,7 @@ export default {
     box-shadow 0 0 1.25vw #cac6c6
 
     .title {
-      margin 0.5vw auto 1.2vw auto
+      margin 0.5vw auto 3vw auto
       text-align center
       color #aebac7
       font-size 1.1vw
@@ -93,6 +94,53 @@ export default {
     }
     .remember {
       margin-bottom 1vw
+    }
+    .el-form-item {
+      margin-bottom 3vw
+      height 2.5vw
+    }
+    .el-input {
+      width 100%
+      font-size 0.9vw
+    }
+    .el-input__inner {
+      width 97%
+      height 2.5vw
+      line-height 2.5vw
+      border-radius 0.4vw
+    }
+
+    .el-form-item__error {
+      padding-top 0.2vw
+    }
+
+    .el-input.check-code {
+      .el-input__inner {
+        border-radius 0 0.4vw 0.4vw 0
+      }
+    }
+
+    .el-checkbox__label {
+      padding-left 0.5vw
+      line-height 1.5
+      font-size 0.9vw
+    }
+
+    .el-form-item__content {
+      line-height 2vw
+      font-size 0.9vw
+    }
+
+    .el-checkbox__input {
+      line-height 0.9vw
+      font-size 0.9vw
+    }
+
+    .el-input-group__prepend {
+      background-color #fff
+      border 1px solid #dfe2e5
+      border-right none
+      border-radius 0.4vw 0 0 0.4vw
     }
   }
   .login-button {
@@ -111,50 +159,5 @@ export default {
     padding 0
     border none
   }
-  /deep/ .el-form-item {
-    margin-bottom 1.5vw
-    height 2.5vw
-  }
-  /deep/ .el-input {
-    width 100%
-    font-size 0.9vw
-  }
-  /deep/ .el-input__inner {
-    height2.5vw
-    line-height 2.5vw
-    border-radius 0.4vw
-  }
 
-  /deep/ .el-form-item__error {
-    padding-top 0.2vw
-  }
-
-  /deep/ .el-input.check-code {
-    .el-input__inner {
-      border-radius 0 0.4vw 0.4vw 0
-    }
-  }
-
-  /deep/ .el-checkbox__label {
-    padding-left 0.5vw
-    line-height 1.5
-    font-size 0.9vw
-  }
-
-  /deep/ .el-form-item__content {
-    line-height 2vw
-    font-size 0.9vw
-  }
-
-  /deep/ .el-checkbox__input {
-    line-height 0.9vw
-    font-size 0.9vw
-  }
-
-  /deep/ .el-input-group__prepend {
-    background-color #fff
-    border 1px solid #dfe2e5
-    border-right none
-    border-radius 0.4vw 0 0 0.4vw
-  }
 </style>

@@ -26,10 +26,16 @@ const routes = [
 ]
 
 const mapResolveComponents = (routes) => {
-  return routes.map(route => ({
-    ...route,
-    component: import('@/views/' + route.component + '.vue')
-  }))
+  return routes.map(route => {
+    if (route.component) {
+      return {
+        ...route,
+        component: () => import('@/views/' + route.component + '.vue')
+      }
+    } else {
+      return route
+    }
+  })
 }
 
 export default mapResolveComponents(routes)

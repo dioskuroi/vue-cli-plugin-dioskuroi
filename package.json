@@ -1,6 +1,6 @@
 {
   "name": "vue-cli-plugin-dioskuroi",
-  "version": "1.0.03",
+  "version": "1.0.09",
   "description": "vue-cli-plugin-dioskuroi",
   "main": "index.js",
   "scripts": {
