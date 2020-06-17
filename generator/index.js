@@ -1,7 +1,7 @@
 /*
  * @Author: xujun
  * @Date: 2020-06-16 09:18:00
- * @LastEditTime: 2020-06-16 16:27:24
+ * @LastEditTime: 2020-06-17 11:47:13
  * @LastEditors: xujun
  * @FilePath: /vue-cli-plugin-dioskuroi/generator/index.js
  * @Description: generator
@@ -17,14 +17,17 @@ module.exports = (api, options, rootOptions) => {
     dependencies: {
       "@sentry/browser": "^5.5.0",
       "@sentry/integrations": "^5.5.0",
-      "axios": "^0.19.2"
+      "axios": "^0.19.2",
+      "localForage": "1.7.4"
     },
     devDependencies: {
       "@sentry/cli": "^1.47.1",
       "@sentry/webpack-plugin": "^1.8.0",
       "sentry-cli-binary": "^1.25.0",
       "happypack": "^5.0.1",
-      "add-asset-html-webpack-plugin": "^3.1.3"
+      "add-asset-html-webpack-plugin": "^3.1.3",
+      "babel-plugin-transform-decorators": "^6.24.1",
+      "@babel/plugin-proposal-optional-chaining": "^7.10.1"
     }
   })
 
