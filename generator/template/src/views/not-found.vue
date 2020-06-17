@@ -1,10 +1,14 @@
 <template>
-  <section>404</section>
+  <error-template type="notFound" />
 </template>
 
 <script>
+import ErrorTemplate from '../components/base/error-template'
 export default {
-  
+  name: 'NotFound',
+  components: {
+    ErrorTemplate
+  }
 }
 </script>
 
