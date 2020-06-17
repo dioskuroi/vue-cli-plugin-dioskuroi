@@ -19,7 +19,8 @@ module.exports = (api, options, rootOptions) => {
       "@sentry/integrations": "^5.5.0",
       "axios": "^0.19.2",
       "localforage": "1.7.4",
-      "element-ui": "^2.13.2"
+      "element-ui": "^2.13.2",
+      "lodash": '^4.17.15'
     },
     devDependencies: {
       // "@sentry/cli": "^1.47.1",

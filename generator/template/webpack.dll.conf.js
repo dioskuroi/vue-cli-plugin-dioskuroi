@@ -3,7 +3,7 @@ const webpack = require('webpack')
 module.exports = {
   entry: {
     // 想统一打包的类库
-    vendor: ['vue/dist/vue.esm.js', 'vuex', 'vue-router', 'axios']
+    vendor: ['vue/dist/vue.esm.js', 'vuex', 'vue-router', 'axios', 'element-ui', 'lodash']
   },
   output: {
     path: path.join(__dirname, 'dll'),
