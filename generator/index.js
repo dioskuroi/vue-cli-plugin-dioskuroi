@@ -18,7 +18,8 @@ module.exports = (api, options, rootOptions) => {
       "@sentry/browser": "^5.5.0",
       "@sentry/integrations": "^5.5.0",
       "axios": "^0.19.2",
-      "localforage": "1.7.4"
+      "localforage": "1.7.4",
+      "element-ui": "^2.13.2"
     },
     devDependencies: {
       // "@sentry/cli": "^1.47.1",
@@ -27,7 +28,8 @@ module.exports = (api, options, rootOptions) => {
       "happypack": "^5.0.1",
       "add-asset-html-webpack-plugin": "^3.1.3",
       "babel-plugin-transform-decorators": "^6.24.1",
-      "@babel/plugin-proposal-optional-chaining": "^7.10.1"
+      "@babel/plugin-proposal-optional-chaining": "^7.10.1",
+      "webpack-cli": "^3.3.11"
     }
   })
 
