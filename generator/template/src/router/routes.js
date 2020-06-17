@@ -24,3 +24,12 @@ const routes = [
     component: 'not-found'
   }
 ]
+
+const mapResolveComponents = (routes) => {
+  return routes.map(route => ({
+    ...route,
+    component: import('@/views/' + route.component + '.vue')
+  }))
+}
+
+export default mapResolveComponents(routes)
