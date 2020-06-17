@@ -72,3 +72,11 @@ export function isArray(arg) {
   }
   return Array.isArray(arg)
 }
+
+/**
+ * @param {Object} object
+ * @returns {Boolean}
+ */
+export function isObject(obj) {
+  return Object.prototype.toString.call(obj) === '[object Object]'
+}
