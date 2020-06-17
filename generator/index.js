@@ -12,7 +12,7 @@ module.exports = (api, options, rootOptions) => {
   api.extendPackage({
     scripts: {
       test: 'vue-cli-service test',
-      'build:dll': 'webpack --config webpack.dll.conf.js'
+      'build:dll': 'webpack --config webpack.dll.conf.js --mode production'
     },
     dependencies: {
       "@sentry/browser": "^5.5.0",
