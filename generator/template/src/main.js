@@ -1,15 +1,12 @@
----
-extend: '@vue/cli-service/generator/template/src/main.js'
-replace:
-  - !!js/regexp /Vue.config.productionTip = false/
----
-
-<%# REPLACE %>
+import Vue from 'vue'
+import App from './App.vue'
+import router from './router'
+import store from './store'
+import { initInterceptors } from './utils/request'
+import './assets/stylus/reset.styl'
 <%_ if (sentry) { _%>
 import * as Sentry from '@sentry/browser'
 import * as Integrations from '@sentry/integrations'
-
-Vue.config.productionTip = false
 
 process.env.NODE_ENV === 'production' &&
   Sentry.init({
@@ -24,7 +21,14 @@ process.env.NODE_ENV === 'production' &&
     release: process.env.RELEASE_VERSION,
     environment: process.env.SENTRY_ENV
   })
-<%_ } else { _%>
-Vue.config.productionTip = false
 <%_ } _%>
-<%# END_REPLACE %>
+
+Vue.config.productionTip = false
+
+initInterceptors(store, router)
+
+new Vue({
+  router,
+  store,
+  render: h => h(App)
+}).$mount('#app')
