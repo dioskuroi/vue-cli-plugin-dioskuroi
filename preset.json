@@ -1,27 +1,19 @@
 {
-  "useTaobaoRegistry": false,
-  "latestVersion": "4.4.4",
-  "lastChecked": 1592272425799,
-  "packageManager": "yarn",
-  "presets": {
-    "dioskuroi": {
-      "useConfigFiles": true,
-      "plugins": {
-        "@vue/cli-plugin-babel": {},
-        "@vue/cli-plugin-router": {
-          "historyMode": true
-        },
-        "@vue/cli-plugin-vuex": {},
-        "@vue/cli-plugin-eslint": {
-          "config": "standard",
-          "lintOn": [
-            "save",
-            "commit"
-          ]
-        },
-        "@vue/cli-plugin-unit-jest": {}
-      },
-      "cssPreprocessor": "stylus"
-    }
-  }
+  "useConfigFiles": true,
+  "plugins": {
+    "@vue/cli-plugin-babel": {},
+    "@vue/cli-plugin-router": {
+      "historyMode": true
+    },
+    "@vue/cli-plugin-vuex": {},
+    "@vue/cli-plugin-eslint": {
+      "config": "standard",
+      "lintOn": [
+        "save",
+        "commit"
+      ]
+    },
+    "@vue/cli-plugin-unit-jest": {}
+  },
+  "cssPreprocessor": "stylus"
 }
