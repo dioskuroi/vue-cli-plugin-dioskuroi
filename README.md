@@ -25,6 +25,11 @@ this plugin include features:
 **Recommend:**
 ```shell
   vue create --preset dioskuroi/vue-cli-plugin-dioskuroi my-project
+  cd my-project
+  # build dll file
+  yarn build:dll
+  # start project
+  yarn serve
 ```
 **OR:**
 > on this version, when you create your project, you need choose vuex vue-router stylus eslint + standard rule.
@@ -32,4 +37,8 @@ this plugin include features:
   vue create my-project
   cd my-project
   vue add dioskuroi
+  # build dll file
+  yarn build:dll
+  # start project
+  yarn serve
 ```
