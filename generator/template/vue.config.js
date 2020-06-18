@@ -3,6 +3,7 @@ const path = require('path')
 
 module.exports = {
   assetsDir: 'static',
+  lintOnSave: process.env.NODE_ENV === 'development',
   chainWebpack (config) {
     const jsRule = config.module.rule('js')
     jsRule.uses.clear()
