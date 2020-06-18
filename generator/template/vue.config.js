@@ -1,3 +1,4 @@
+const fs = require('fs')
 const path = require('path')
 
 module.exports = {
@@ -10,14 +11,27 @@ module.exports = {
       .options({
         id: 'happybabel'
       })
-
-    config.plugin('AddAssetHtmlWebpackPlugin').use(require('add-asset-html-webpack-plugin'), [{
-      filepath: path.resolve(__dirname, 'dll', 'vendor.dll.js')
-    }])
-    config.plugin('DllReferencePlugin').use(require('webpack/lib/DllReferencePlugin'), [{
-      context: __dirname,
-      manifest: path.resolve(__dirname, 'dll', 'vendor-manifest.json')
-    }])
+    const files = fs.readdirSync(path.resolve(__dirname, './dll'))
+    files.forEach((file, index) => {
+      if (/.*\.dll.js/.test(file)) {
+        config.plugin('AddAssetHtmlWebpackPlugin' + index).use(require('add-asset-html-webpack-plugin'), [{
+          filepath: path.resolve(__dirname, 'dll', file)
+        }])
+      }
+      if (/.*\.manifest.json/.test(file)) {
+        config.plugin('DllReferencePlugin' + index).use(require('webpack/lib/DllReferencePlugin'), [{
+          context: __dirname,
+          manifest: path.resolve(__dirname, 'dll', file)
+        }])
+      }
+    })
+    // config.plugin('AddAssetHtmlWebpackPlugin').use(require('add-asset-html-webpack-plugin'), [{
+    //   filepath: path.resolve(__dirname, 'dll', 'vendor.dll.js')
+    // }])
+    // config.plugin('DllReferencePlugin').use(require('webpack/lib/DllReferencePlugin'), [{
+    //   context: __dirname,
+    //   manifest: path.resolve(__dirname, 'dll', 'vendor-manifest.json')
+    // }])
     config.plugin('happyPack').use(require('happypack'), [{
       id: 'happybabel',
       loaders: ['babel-loader?cacheDirectory'],
