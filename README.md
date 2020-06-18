@@ -1,12 +1,26 @@
 # vue-cli-plugin-dioskuroi
 A simple Vue-CLI plugin for create vue project.
+
 this plugin include features:
+
 ✓ eslint + standard rule
+
 ✓ vuex
+
 ✓ vue-router
+
 ✓ element-ui
+
 ✓ unit test
+
 ✓ stylus
+
+✓ babel-plugin: proposal-optional-chaining and decorator
+
+✓ webpack-plugin: dllPlugin and happyPack
+
+✓ sentry (which uses to monitor exceptions of your project)
+
 ## Create Project
 **Recommend:**
 ```shell
